@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
+gem "better_errors"
+
 group :test do
   gem "rspec"
   gem "rspec-rails"
