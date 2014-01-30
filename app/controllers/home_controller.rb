@@ -5,6 +5,6 @@ class HomeController < ApplicationController
   end
 
   def new
-  	@newMethods = Methods.new
+  	
   end
 end

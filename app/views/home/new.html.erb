@@ -1,6 +1,6 @@
 <h1>メソッドを新規に追加</h1>
 
-<%= form_for @newMethods do |f| %>
+<%= form_for Methods.new do |f| %>
 	name:<%= f.text_field :name %>
 	data:<%= f.text_area :data %>
 	説明:<%= f.text_area :discription %>
