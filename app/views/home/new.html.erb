@@ -1,0 +1,12 @@
+<h1>メソッドを新規に追加</h1>
+
+<%= form_for @newMethods do |f| %>
+	name:<%= f.text_field :name %>
+	data:<%= f.text_area :data %>
+	説明:<%= f.text_area :discription %>
+	引数:<%= f.text_field :argument %>
+	戻り値:<%= f.text_field :return_value %>
+	tag:<%= f.text_field :tag %>
+	<%= f.submit "登録"%>
+<% end %>
+  

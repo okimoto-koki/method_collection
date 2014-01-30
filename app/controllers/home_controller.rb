@@ -3,4 +3,8 @@ class HomeController < ApplicationController
 
   def index
   end
+
+  def new
+  	@newMethods = Methods.new
+  end
 end
