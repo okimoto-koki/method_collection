@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130081939) do
+ActiveRecord::Schema.define(version: 20140130093144) do
 
-  create_table "methods", force: true do |t|
-    t.string   "name"
+  create_table "functions", force: true do |t|
+    t.string   "names"
     t.text     "data"
-    t.text     "description"
-    t.string   "argument"
-    t.string   "return_value"
-    t.text     "tag"
+    t.text     "descriptions"
+    t.string   "arguments"
+    t.string   "return_values"
+    t.text     "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,12 +1,12 @@
 <h1>メソッドを新規に追加</h1>
 
-<%= form_for Methods.new do |f| %>
-	name:<%= f.text_field :name %>
-	data:<%= f.text_area :data %>
-	説明:<%= f.text_area :discription %>
-	引数:<%= f.text_field :argument %>
-	戻り値:<%= f.text_field :return_value %>
-	tag:<%= f.text_field :tag %>
+<%= form_for Function.new, :url => {:action => 'create'} do |f| %>
+	name:<%= f.text_field :names %><br>
+	data:<%= f.text_area :data %><br>
+	説明:<%= f.text_area :descriptions %><br>
+	引数:<%= f.text_field :arguments %><br>
+	戻り値:<%= f.text_field :return_values %><br>
+	tag:<%= f.text_field :tags %><br>
 	<%= f.submit "登録"%>
 <% end %>
   
