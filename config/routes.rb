@@ -5,7 +5,6 @@ MethodCollection::Application.routes.draw do
   get "function/search"
   get "function/search_result"
   devise_for :users
-  get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,30 +1,34 @@
 <h1>検索</h1>
 
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :names_cont, "Names contains" %>
-    <%= f.text_field :names_cont %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
+<%= search_form_for @search ,:url => {:action => 'search'} do |f| %>
+<div class="field">
+	<%= f.label :language_cont, "言語" %>
+	<%= f.select :languages_eq, [["ALL", ""],["C", "C"], ["C++", "C++"], ["C#", "C#"],["Java", "Java"], ["Ruby", "Ruby"], ["PHP", "PHP"], ["Python", "Pythonthon"], ["Objective-C", "Objective-C"]]  %>
+</div>
+<div class="field">
+	<%= f.label :names_cont, "メソッド名" %>
+	<%= f.text_field :names_cont %>
+</div>
+<div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
 <table border="1">
-<thead>
-	<tr>
-		<th>ID</th>
-		<th>言語</th>
-		<th>メソッド名</th>	
-		<th>更新時間</th>
-	</tr>
-</thead>
-<% @result.each do |index| %>
+	<thead>
+		<tr>
+			<th><%= sort_link(@search, :id, "ID") %></th>
+			<th><%= sort_link(@search, :languages, "languages") %></th>
+			<th><%= sort_link(@search, :names, "Name") %></th>
+			<th><%= sort_link(@search, :updated_at, "updated_at") %></th>
+		</tr>
+	</thead>
+	<% @result.each do |index| %>
 	<tbody>
-	<tr>
-		<td><%= index.id %></td>
-		<td><%= index.languages %></td>
-		<td><%= index.names %></td>
-		<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>
-	</tr>
+		<tr>
+			<td><%= index.id %></td>
+			<td><%= index.languages %></td>
+			<td><%= index.names %></td>
+			<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>
+		</tr>
 	</tbody>
-<% end %>
+	<% end %>
 </table>
