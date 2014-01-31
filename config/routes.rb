@@ -1,14 +1,19 @@
 MethodCollection::Application.routes.draw do
+  get "function/index"
+  get "function/new"
+  get "function/create"
+  get "function/search"
+  get "function/search_result"
   devise_for :users
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
-  post 'home/create' =>'home#create'
-  get 'home/search' => 'home#search'
-  post 'home/search_result' => 'home#search_result'
+  root 'functions#index'
+  post 'functions/create' =>'functions#create'
+  get 'functions/search' => 'functions#search'
+  post 'functions/search_result' => 'functions#search_result'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -17,7 +22,6 @@ MethodCollection::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :home
   resources :functions
 
   # Example resource route with options:
