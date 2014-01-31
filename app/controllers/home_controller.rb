@@ -22,4 +22,11 @@ class HomeController < ApplicationController
   	@newFunction.save
   	redirect_to :root
   end
+
+  def search
+  end
+
+  def search_result
+  	@search_result = Function.find_all_by_languages(params[:languages])
+  end
 end

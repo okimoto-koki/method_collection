@@ -1,0 +1,6 @@
+<h1>検索</h1>
+
+<%= form_tag('search_result',:method => :post) do %>
+  言語：<%= select_tag 'languages', options_for_select([["C", "C"], ["C++", "C++"], ["C#", "C#"],["Java", "Java"], ["Ruby", "Ruby"], ["PHP", "PHP"], ["Python", "Python"], ["Objective-C", "Objective-C"]]) %><br>
+  <%= submit_tag "search" %>
+<% end %>

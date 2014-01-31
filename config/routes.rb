@@ -6,7 +6,9 @@ MethodCollection::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  post '/home/create' =>'home#create'
+  post 'home/create' =>'home#create'
+  get 'home/search' => 'home#search'
+  post 'home/search_result' => 'home#search_result'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

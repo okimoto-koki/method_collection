@@ -3,6 +3,7 @@
 
 <p>
 <%= link_to '新規メソッド追加', 'home/new' %>
+<%= link_to '検索', 'home/search' %>
 </p>
 <table border="1">
 <thead>
@@ -18,7 +19,7 @@
 	<tr>
 		<td><%= index.id %></td>
 		<td><%= index.languages %></td>
-		<td><%= index.names %></td>
+ 		<td><%= link_to "index.names", { :action => "admin_result", :id => index.id },  :method => :post %>/</td> 
 		<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>
 	</tr>
 	</tbody>
