@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
+gem 'ransack'
+
 group :development do
   # エラー画面をわかりやすく整形してくれる
   gem 'better_errors'

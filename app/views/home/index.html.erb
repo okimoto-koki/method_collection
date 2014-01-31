@@ -4,3 +4,23 @@
 <p>
 <%= link_to '新規メソッド追加', 'home/new' %>
 </p>
+<table border="1">
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>言語</th>
+		<th>メソッド名</th>	
+		<th>更新時間</th>
+	</tr>
+</thead>
+<% @indexFunction.each do |index| %>
+	<tbody>
+	<tr>
+		<td><%= index.id %></td>
+		<td><%= index.languages %></td>
+		<td><%= index.names %></td>
+		<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>
+	</tr>
+	</tbody>
+<% end %>
+</table>
