@@ -10,12 +10,13 @@ class HomeController < ApplicationController
 
   def create
   	@newFunction = Function.new
-  	@newFunction.names = params[:function][:names]
-  	@newFunction.data = params[:function][:data]
-  	@newFunction.descriptions = params[:function][:descriptions]
-  	@newFunction.arguments = params[:function][:arguments]
-  	@newFunction.return_values = params[:function][:return_values]
-  	@newFunction.tags = params[:function][:tags]
+  	@newFunction.languages = params[:languages]
+  	@newFunction.names = params[:names]
+  	@newFunction.data = params[:data]
+  	@newFunction.descriptions = params[:descriptions]
+  	@newFunction.arguments = params[:arguments]
+  	@newFunction.return_values = params[:return_values]
+  	@newFunction.tags = params[:tags]
   	@newFunction.save
   	redirect_to :root
   end
