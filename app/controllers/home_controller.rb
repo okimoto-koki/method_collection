@@ -24,9 +24,10 @@ class HomeController < ApplicationController
   end
 
   def search
+	@search = Function.search(params[:q])
+  	@result = @search.result(distinct: true)
   end
 
   def search_result
-  	@search_result = Function.find_all_by_languages(params[:languages])
   end
 end

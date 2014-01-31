@@ -19,7 +19,7 @@
 	<tr>
 		<td><%= index.id %></td>
 		<td><%= index.languages %></td>
- 		<td><%= link_to "index.names", { :action => "admin_result", :id => index.id },  :method => :post %>/</td> 
+ 		<td><%= link_to index.names, { :action => "search_result", :id => index.id },  :method => :post %></td> 
 		<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>
 	</tr>
 	</tbody>
