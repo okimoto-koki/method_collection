@@ -9,6 +9,15 @@
 	<%= f.label :names_cont, "メソッド名" %>
 	<%= f.text_field :names_cont %>
 </div>
+<div class="field">
+	<%= f.label :descriptions_cont, "説明文" %>
+	<%= f.text_area :descriptions_cont %>
+</div>
+<div class="field">
+	<%= f.label :tags_cont, "タグ" %>
+	<%= f.text_field :tags_cont %>
+</div>
+
 <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
