@@ -3,7 +3,7 @@
 <%= form_tag('create', :method => :post) do%>
 	言語:<%= select_tag 'languages', options_for_select([["C", "C"], ["C++", "C++"], ["C#", "C#"],["Java", "Java"], ["Ruby", "Ruby"], ["PHP", "PHP"], ["Python", "Python"], ["Objective-C", "Objective-C"]]) %><br>
 	名前:<%= text_field_tag("names") %><br>
-	メソッド:<%= text_area_tag("data") %><br>
+	メソッド:<%= text_area_tag("data",'', :size => "20x10") %><br>
 	説明:<%= text_area_tag ("descriptions") %><br>
 	引数:<%= text_field_tag ("arguments") %><br>
 	戻り値:<%= text_field_tag ("return_values") %><br>
