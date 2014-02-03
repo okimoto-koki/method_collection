@@ -3,31 +3,44 @@
 
 <%= form_for @newFunction do |f| %>
 	<p>	
-	<%= f.label :languages, "言語" %>
-	<%= f.radio_button :languages, :tag_value %>
+	<%= f.label :languages, "言語:" %>
+	<%= f.radio_button :languages, "C" %>
+	<%= f.label :languages, "C" %>
+	<%= f.radio_button :languages, "C++" %>
+	<%= f.label :languages, "C++" %>
+	<%= f.radio_button :languages, "C#" %>
+	<%= f.label :languages, "C#" %>
+	<%= f.radio_button :languages, "Java" %>
+	<%= f.label :languages, "Java" %>
+	<%= f.radio_button :languages, "PHP" %>
+	<%= f.label :languages, "PHP" %>
+	<%= f.radio_button :languages, "Ruby" %>
+	<%= f.label :languages, "Ruby" %>
+	<%= f.radio_button :languages, "Phython" %>
+	<%= f.label :languages, "Phython" %>
 	</p>
 	<p>
-	<%= f.label :names, "名前" %>
+	<%= f.label :names, "名前:" %>
 	<%= f.text_field :names %>
 	</p>
 	<p>
-	<%= f.label :data, "メソッド" %>
+	<%= f.label :data, "メソッド:" %>
 	<%= f.text_area :data %>
 	</p>
 	<p>
-	<%= f.label :descriptions, "説明" %>
+	<%= f.label :descriptions, "説明:" %>
 	<%= f.text_area :descriptions %>
 	</p>
 	<p>
-	<%= f.label :arguments, "引数" %>
+	<%= f.label :arguments, "引数:" %>
 	<%= f.text_field :arguments %>
 	</p>
 	<p>
-	<%= f.label :return_values, "戻り値" %>
+	<%= f.label :return_values, "戻り値:" %>
 	<%= f.text_field :return_values %>
 	</p>
 	<p>
-	<%= f.label :tags, "タグ" %>
+	<%= f.label :tags, "タグ:" %>
 	<%= f.text_field :tags %>
 	</p>
 	<%= f.submit "Submit", :disable_with => 'Submiting...' %>

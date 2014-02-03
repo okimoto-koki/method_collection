@@ -17,7 +17,7 @@ class FunctionsController < ApplicationController
   def create
   	@createFunction = Function.new(function_params)
   	@createFunction.save
-  	redirect_to 'fuctions'
+  	redirect_to :root
   end
 
   def edit
