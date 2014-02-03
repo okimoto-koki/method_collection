@@ -1,4 +1,5 @@
 MethodCollection::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   get "function/index"
   get "function/new"
   get "function/create"

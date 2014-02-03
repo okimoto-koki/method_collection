@@ -31,6 +31,8 @@ gem 'devise'
 
 gem 'ransack'
 
+gem 'rails_admin'
+
 group :development do
   # エラー画面をわかりやすく整形してくれる
   gem 'better_errors'
