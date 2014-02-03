@@ -2,7 +2,7 @@ class FunctionsController < ApplicationController
   before_filter :authenticate_user! #devise認証が必須
 
   def index
-  	@indexFunction = Function.all
+  	@indexFunction = Function.order("updated_at DESC").page(params[:page]).per(10)
 
   end
 

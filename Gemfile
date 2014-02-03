@@ -33,6 +33,8 @@ gem 'ransack'
 
 gem 'rails_admin'
 
+gem 'kaminari'
+
 group :development do
   # エラー画面をわかりやすく整形してくれる
   gem 'better_errors'

@@ -186,6 +186,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
+  kaminari
   mysql2
   rails (= 4.0.2)
   rails_admin

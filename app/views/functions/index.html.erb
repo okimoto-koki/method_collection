@@ -5,6 +5,7 @@
 <%= link_to '新規メソッド追加', 'functions/new' %>
 <%= link_to '検索', 'functions/search' %>
 </p>
+
 <table border="1">
 <thead>
 	<tr>
@@ -15,6 +16,7 @@
 		<th>更新時間</th>
 	</tr>
 </thead>
+<%= paginate @indexFunction %>
 <% @indexFunction.each do |index| %>
 	<tbody>
 	<tr>
