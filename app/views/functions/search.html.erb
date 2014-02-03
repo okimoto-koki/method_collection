@@ -30,6 +30,7 @@
 			<th><%= sort_link(@search, :updated_at, "updated_at") %></th>
 		</tr>
 	</thead>
+	<%= paginate @result %>
 	<% @result.each do |index| %>
 	<tbody>
 		<tr>
@@ -41,6 +42,3 @@
 	</tbody>
 	<% end %>
 </table>
-
-
-	<%= link_to "TOP2", 'index' %>

@@ -23,9 +23,13 @@ class FunctionsController < ApplicationController
   	redirect_to :root
   end
 
+  def edit
+  	
+  end
+
   def search
 	@search = Function.search(params[:q])
-  	@result = @search.result(distinct: true)
+  	@result = @search.result(distinct: true).page(params[:page])
   end
 
   def detail
