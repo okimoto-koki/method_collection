@@ -22,7 +22,7 @@
 	<tr>
 		<td><%= index.id %></td>
 		<td><%= index.languages %></td>
- 		<td><%= link_to index.names, { :action => "detail", :id => index.id },  :method => :post %></td> 
+ 		<td><%= link_to index.names, function_path(index.id) %></td> 
  		<td><%= index.tags%></td>
 		<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>
 	</tr>

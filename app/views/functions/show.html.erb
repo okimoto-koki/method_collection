@@ -1,0 +1,32 @@
+<table border="1">
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>言語</th>
+		<th>メソッド名</th>
+		<th>タグ</th>
+		<th>引数</th>
+		<th>戻り値</th>	
+		<th>更新時間</th>
+		<th>説明</th>
+		<th>内容</th>
+	</tr>
+</thead>
+	<tbody>
+	<tr>
+		<td><%= @showFunction.id %></td>
+		<td><%= @showFunction.languages %></td>
+ 		<td><%= @showFunction.names %></td> 
+ 		<td><%= @showFunction.tags %></td>
+ 		<td><%= @showFunction.arguments %></td>
+ 		<td><%= @showFunction.return_values %></td>
+		<td><%= @showFunction.updated_at.strftime("%m月%d日 %H時%M分") %></td>
+		<td><%= @showFunction.descriptions %></td>
+		<td><%= simple_format(@showFunction.data) %></td>
+	</tr>
+	</tbody>
+</table>
+
+<%= link_to "編集", 'functions/edit' %>
+
+<%= link_to "Back", :back %>

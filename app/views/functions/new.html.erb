@@ -1,13 +1,34 @@
 <h1>メソッドを新規に追加</h1>
-
-<%= form_tag('create', :method => :post) do%>
-	言語:<%= select_tag 'languages', options_for_select([["C", "C"], ["C++", "C++"], ["C#", "C#"],["Java", "Java"], ["Ruby", "Ruby"], ["PHP", "PHP"], ["Python", "Python"], ["Objective-C", "Objective-C"]]) %><br>
-	名前:<%= text_field_tag("names") %><br>
-	メソッド:<%= text_area_tag("data",'', :size => "20x10") %><br>
-	説明:<%= text_area_tag ("descriptions") %><br>
-	引数:<%= text_field_tag ("arguments") %><br>
-	戻り値:<%= text_field_tag ("return_values") %><br>
-	tag:<%= text_field_tag ("tags") %><br>
-	<%= submit_tag "登録"%>
-<% end %>
   
+
+<%= form_for @newFunction do |f| %>
+	<p>	
+	<%= f.label :languages, "言語" %>
+	<%= f.radio_button :languages, :tag_value %>
+	</p>
+	<p>
+	<%= f.label :names, "名前" %>
+	<%= f.text_field :names %>
+	</p>
+	<p>
+	<%= f.label :data, "メソッド" %>
+	<%= f.text_area :data %>
+	</p>
+	<p>
+	<%= f.label :descriptions, "説明" %>
+	<%= f.text_area :descriptions %>
+	</p>
+	<p>
+	<%= f.label :arguments, "引数" %>
+	<%= f.text_field :arguments %>
+	</p>
+	<p>
+	<%= f.label :return_values, "戻り値" %>
+	<%= f.text_field :return_values %>
+	</p>
+	<p>
+	<%= f.label :tags, "タグ" %>
+	<%= f.text_field :tags %>
+	</p>
+	<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end %>
