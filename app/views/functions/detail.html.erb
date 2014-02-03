@@ -1,0 +1,30 @@
+<table border="1">
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>言語</th>
+		<th>メソッド名</th>
+		<th>タグ</th>
+		<th>引数</th>
+		<th>戻り値</th>	
+		<th>更新時間</th>
+		<th>説明</th>
+		<th>内容</th>
+	</tr>
+</thead>
+	<tbody>
+	<tr>
+		<td><%= @detail.id %></td>
+		<td><%= @detail.languages %></td>
+ 		<td><%= @detail.names %></td> 
+ 		<td><%= @detail.tags %></td>
+ 		<td><%= @detail.arguments %></td>
+ 		<td><%= @detail.return_values %></td>
+		<td><%= @detail.updated_at.strftime("%m月%d日 %H時%M分") %></td>
+		<td><%= @detail.descriptions %></td>
+		<td><%= @detail.data %></td>
+	</tr>
+	</tbody>
+</table>
+
+<%= link_to "Back", :back %>

@@ -3,7 +3,7 @@ MethodCollection::Application.routes.draw do
   get "function/new"
   get "function/create"
   get "function/search"
-  get "function/search_result"
+  get "function/detail"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,6 +13,7 @@ MethodCollection::Application.routes.draw do
   post 'functions/create' =>'functions#create'
   get 'functions/search' => 'functions#search'
   post 'functions/search_result' => 'functions#search_result'
+  post 'functions/detail' => 'functions#detail'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

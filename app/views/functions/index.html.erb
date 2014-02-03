@@ -10,7 +10,8 @@
 	<tr>
 		<th>ID</th>
 		<th>言語</th>
-		<th>メソッド名</th>	
+		<th>メソッド名</th>
+		<th>タグ</th>	
 		<th>更新時間</th>
 	</tr>
 </thead>
@@ -19,9 +20,21 @@
 	<tr>
 		<td><%= index.id %></td>
 		<td><%= index.languages %></td>
- 		<td><%= link_to index.names, { :action => "search_result", :id => index.id },  :method => :post %></td> 
+ 		<td><%= link_to index.names, { :action => "detail", :id => index.id },  :method => :post %></td> 
+ 		<td><%= index.tags%></td>
 		<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>
 	</tr>
 	</tbody>
 <% end %>
 </table>
+
+<p>
+<% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to 'メールアドレスの変更', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>

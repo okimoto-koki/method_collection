@@ -28,6 +28,7 @@ class FunctionsController < ApplicationController
   	@result = @search.result(distinct: true)
   end
 
-  def search_result
+  def detail
+  	@detail = Function.find_by id: params[:id]
   end
 end
