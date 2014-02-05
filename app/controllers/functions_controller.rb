@@ -1,8 +1,7 @@
 class FunctionsController < ApplicationController
   before_filter :authenticate_user! #devise認証が必須
   before_action :set_function, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new, :edit, :update]
-
+  
   def index
   	@function = Function.order("updated_at DESC").page(params[:page]).per(10)
 
@@ -48,10 +47,6 @@ class FunctionsController < ApplicationController
 
   	def set_function
   		@function = Function.find(params[:id])
-  	end
-
-  	def set_user
-  		@user = User.find(params[:current_user.id])
   	end
 
   	def function_params

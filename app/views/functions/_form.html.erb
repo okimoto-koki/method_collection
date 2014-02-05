@@ -1,12 +1,7 @@
 <%= form_for @function do |f| %>
 <p>
-	<%= f.label :emails, "ユーザメールアドレス:" %>
-	<%= f.text_field :emails , @user.email%>
-	<% if @function.errors.any? %>
-	<%= @function.errors.messages[:emails][0] %>
-	<% end %>
+	登録メールアドレスは<%= f.label :email, current_user.email %>です。	
 </p>
-
 <p>	
 	<%= f.label :languages, "言語:" %>
 	<%= f.radio_button :languages, "C" %>
