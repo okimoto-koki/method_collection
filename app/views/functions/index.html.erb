@@ -2,8 +2,8 @@
 <p>関娘をドックに集めましょう</p>
 
 <p>
-<%= link_to '新規メソッド追加', new_function_path %>
-<%= link_to '検索', functions_search_path %>
+<%= link_to '新規メソッド追加', :new_function %>
+<%= link_to '検索', :functions_search %>
 </p>
 
 <table border="1">
@@ -16,7 +16,9 @@
 		<th>更新時間</th>
 	</tr>
 </thead>
+<!-- kaminari -->
 <%= paginate @function %>
+<!--  -->
 <% @function.each do |index| %>
 	<tbody>
 	<tr>

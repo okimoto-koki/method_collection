@@ -1,9 +1,10 @@
 <%= form_for @function do |f| %>
 <p>
-	登録メールアドレスは<%= f.label :email, current_user.email %>です。	
+	登録メールアドレスは<%= f.label :email, current_user.email %>です。<br>
+	*が付いている項目は必須項目です。	
 </p>
 <p>	
-	<%= f.label :languages, "言語:" %>
+	<%= f.label :languages, "*言語:" %>
 	<%= f.radio_button :languages, "C" %>
 	<%= f.label :languages, "C" %>
 	<%= f.radio_button :languages, "C++" %>
@@ -20,21 +21,21 @@
 	<%= f.label :languages, "Phython" %>
 </p>
 <p>
-	<%= f.label :names, "名前:" %>
+	<%= f.label :names, "*名前:" %>
 	<%= f.text_field :names %>
 	<% if @function.errors.any? %>
 	<%= @function.errors.messages[:names][0] %>
 	<% end %>
 </p>
 <p>
-	<%= f.label :data, "メソッド:" %>
+	<%= f.label :data, "*メソッド:" %>
 	<%= f.text_area :data %>
 	<% if @function.errors.any? %>
 	<%= @function.errors.messages[:data][0] %>
 	<% end %>
 </p>
 <p>
-	<%= f.label :descriptions, "説明:" %>
+	<%= f.label :descriptions, "*説明:" %>
 	<%= f.text_area :descriptions %>
 	<% if @function.errors.any? %>
 	<%= @function.errors.messages[:descriptions][0] %>

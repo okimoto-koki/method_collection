@@ -43,6 +43,7 @@
 		<tr>
 			<th><%= sort_link(@search, :languages, "言語") %></th>
 			<th><%= sort_link(@search, :names, "名前") %></th>
+			<th><%= sort_link(@search, :tags, "タグ") %></th>
 			<th><%= sort_link(@search, :updated_at, "更新時間") %></th>
 		</tr>
 	</thead>
@@ -51,7 +52,8 @@
 	<tbody>
 		<tr>
 			<td><%= index.languages %></td>
-			<td><%= index.names %></td>
+			<td><%= link_to index.names, function_path(index.id) %></td>
+			<td><%= index.tags %></td>
 			<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>
 		</tr>
 	</tbody>

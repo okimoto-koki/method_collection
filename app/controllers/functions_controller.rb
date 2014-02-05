@@ -1,7 +1,7 @@
 class FunctionsController < ApplicationController
   before_filter :authenticate_user! #devise認証が必須
   before_action :set_function, only: [:show, :edit, :update, :destroy]
-  
+
   def index
   	@function = Function.order("updated_at DESC").page(params[:page]).per(10)
 
@@ -16,10 +16,11 @@ class FunctionsController < ApplicationController
 
   def create
   	@function = Function.new(function_params)
+  	@function.emails = current_user.email
   	if @function.save
   		redirect_to :root
   	else 
-  		render new_function_path
+  		render :new_function
   	end
   end
 
@@ -29,16 +30,18 @@ class FunctionsController < ApplicationController
 
   def update
   	@function = Function.find(params[:id])
+  	@function.emails = current_user.email
   	@function.update(function_params)
-  	redirect_to function_path
+  	redirect_to :function
   end
 
   def destroy
   	@function.destroy
-  	redirect_to root_path
+  	redirect_to :root
   end
 
   def search
+  	# ransack
 	@search = Function.search(params[:q])
   	@result = @search.result(distinct: true).page(params[:page])
   end

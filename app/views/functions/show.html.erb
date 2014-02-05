@@ -10,6 +10,7 @@
 		<th>更新時間</th>
 		<th>説明</th>
 		<th>内容</th>
+		<th>メールアドレス</th>
 	</tr>
 </thead>
 	<tbody>
@@ -23,6 +24,7 @@
 		<td><%= @function.updated_at.strftime("%m月%d日 %H時%M分") %></td>
 		<td><%= @function.descriptions %></td>
 		<td><%= simple_format(@function.data) %></td>
+		<td><%= @function.emails %></td>
 	</tr>
 	</tbody>
 </table>
