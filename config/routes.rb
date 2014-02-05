@@ -1,20 +1,13 @@
 MethodCollection::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  get "function/index"
-  get "function/new"
-  get "function/create"
-  get "function/search"
-  get "function/detail"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'functions#index'
-  post 'functions/create' =>'functions#create'
   get 'functions/search' => 'functions#search'
   post 'functions/search_result' => 'functions#search_result'
-  post 'functions/detail' => 'functions#detail'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

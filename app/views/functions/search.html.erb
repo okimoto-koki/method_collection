@@ -2,8 +2,25 @@
 
 <%= search_form_for @search ,:url => {:action => 'search'} do |f| %>
 <div class="field">
-	<%= f.label :language_cont, "言語" %>
-	<%= f.select :languages_eq, [["ALL", ""],["C", "C"], ["C++", "C++"], ["C#", "C#"],["Java", "Java"], ["Ruby", "Ruby"], ["PHP", "PHP"], ["Python", "Pythonthon"], ["Objective-C", "Objective-C"]]  %>
+	<p>	
+	<%= f.label :languages, "言語:" %>
+	<%= f.radio_button :languages_eq, "" %>
+	<%= f.label :languages_eq, "ALL" %>
+	<%= f.radio_button :languages_eq, "C" %>
+	<%= f.label :languages_eq, "C" %>
+	<%= f.radio_button :languages_eq, "C++" %>
+	<%= f.label :languages_eq, "C++" %>
+	<%= f.radio_button :languages_eq, "C#" %>
+	<%= f.label :languages_eq, "C#" %>
+	<%= f.radio_button :languages_eq, "Java" %>
+	<%= f.label :languages_eq, "Java" %>
+	<%= f.radio_button :languages_eq, "PHP" %>
+	<%= f.label :languages_eq, "PHP" %>
+	<%= f.radio_button :languages_eq, "Ruby" %>
+	<%= f.label :languages_eq, "Ruby" %>
+	<%= f.radio_button :languages_eq, "Phython" %>
+	<%= f.label :languages_eq, "Phython" %>
+	</p>
 </div>
 <div class="field">
 	<%= f.label :names_cont, "メソッド名" %>
@@ -24,17 +41,15 @@
 <table border="1">
 	<thead>
 		<tr>
-			<th><%= sort_link(@search, :id, "ID") %></th>
-			<th><%= sort_link(@search, :languages, "languages") %></th>
-			<th><%= sort_link(@search, :names, "Name") %></th>
-			<th><%= sort_link(@search, :updated_at, "updated_at") %></th>
+			<th><%= sort_link(@search, :languages, "言語") %></th>
+			<th><%= sort_link(@search, :names, "名前") %></th>
+			<th><%= sort_link(@search, :updated_at, "更新時間") %></th>
 		</tr>
 	</thead>
 	<%= paginate @result %>
 	<% @result.each do |index| %>
 	<tbody>
 		<tr>
-			<td><%= index.id %></td>
 			<td><%= index.languages %></td>
 			<td><%= index.names %></td>
 			<td><%= index.updated_at.strftime("%m月%d日 %H時%M分") %></td>

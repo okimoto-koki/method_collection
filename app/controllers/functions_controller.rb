@@ -1,27 +1,42 @@
 class FunctionsController < ApplicationController
   before_filter :authenticate_user! #devise認証が必須
+  before_action :set_function, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:new, :edit, :update]
 
   def index
-  	@indexFunction = Function.order("updated_at DESC").page(params[:page]).per(10)
+  	@function = Function.order("updated_at DESC").page(params[:page]).per(10)
 
   end
 
   def new
-  	@newFunction = Function.new
+  	@function = Function.new
   end
 
   def show
-  	@showFunction = Function.find(params[:id])
   end
 
   def create
-  	@createFunction = Function.new(function_params)
-  	@createFunction.save
-  	redirect_to :root
+  	@function = Function.new(function_params)
+  	if @function.save
+  		redirect_to :root
+  	else 
+  		render new_function_path
+  	end
   end
 
   def edit
-  	
+  	@function = Function.find(params[:id])
+  end
+
+  def update
+  	@function = Function.find(params[:id])
+  	@function.update(function_params)
+  	redirect_to function_path
+  end
+
+  def destroy
+  	@function.destroy
+  	redirect_to root_path
   end
 
   def search
@@ -30,6 +45,14 @@ class FunctionsController < ApplicationController
   end
 
   private
+
+  	def set_function
+  		@function = Function.find(params[:id])
+  	end
+
+  	def set_user
+  		@user = User.find(params[:current_user.id])
+  	end
 
   	def function_params
   		params[:function].permit(:languages, :names, :data, :descriptions, :arguments, :return_values, :tags)

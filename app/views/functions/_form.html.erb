@@ -1,0 +1,61 @@
+<%= form_for @function do |f| %>
+<p>
+	<%= f.label :emails, "ユーザメールアドレス:" %>
+	<%= f.text_field :emails , @user.email%>
+	<% if @function.errors.any? %>
+	<%= @function.errors.messages[:emails][0] %>
+	<% end %>
+</p>
+
+<p>	
+	<%= f.label :languages, "言語:" %>
+	<%= f.radio_button :languages, "C" %>
+	<%= f.label :languages, "C" %>
+	<%= f.radio_button :languages, "C++" %>
+	<%= f.label :languages, "C++" %>
+	<%= f.radio_button :languages, "C#" %>
+	<%= f.label :languages, "C#" %>
+	<%= f.radio_button :languages, "Java" %>
+	<%= f.label :languages, "Java" %>
+	<%= f.radio_button :languages, "PHP" %>
+	<%= f.label :languages, "PHP" %>
+	<%= f.radio_button :languages, "Ruby" %>
+	<%= f.label :languages, "Ruby" %>
+	<%= f.radio_button :languages, "Phython" %>
+	<%= f.label :languages, "Phython" %>
+</p>
+<p>
+	<%= f.label :names, "名前:" %>
+	<%= f.text_field :names %>
+	<% if @function.errors.any? %>
+	<%= @function.errors.messages[:names][0] %>
+	<% end %>
+</p>
+<p>
+	<%= f.label :data, "メソッド:" %>
+	<%= f.text_area :data %>
+	<% if @function.errors.any? %>
+	<%= @function.errors.messages[:data][0] %>
+	<% end %>
+</p>
+<p>
+	<%= f.label :descriptions, "説明:" %>
+	<%= f.text_area :descriptions %>
+	<% if @function.errors.any? %>
+	<%= @function.errors.messages[:descriptions][0] %>
+	<% end %>
+</p>
+<p>
+	<%= f.label :arguments, "引数:" %>
+	<%= f.text_field :arguments %>
+</p>
+<p>
+	<%= f.label :return_values, "戻り値:" %>
+	<%= f.text_field :return_values %>
+</p>
+<p>
+	<%= f.label :tags, "タグ:" %>
+	<%= f.text_field :tags %>
+</p>
+<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end %>

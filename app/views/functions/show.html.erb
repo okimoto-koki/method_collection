@@ -14,17 +14,18 @@
 </thead>
 	<tbody>
 	<tr>
-		<td><%= @showFunction.id %></td>
-		<td><%= @showFunction.languages %></td>
- 		<td><%= @showFunction.names %></td> 
- 		<td><%= @showFunction.tags %></td>
- 		<td><%= @showFunction.arguments %></td>
- 		<td><%= @showFunction.return_values %></td>
-		<td><%= @showFunction.updated_at.strftime("%m月%d日 %H時%M分") %></td>
-		<td><%= @showFunction.descriptions %></td>
-		<td><%= simple_format(@showFunction.data) %></td>
+		<td><%= @function.id %></td>
+		<td><%= @function.languages %></td>
+ 		<td><%= @function.names %></td> 
+ 		<td><%= @function.tags %></td>
+ 		<td><%= @function.arguments %></td>
+ 		<td><%= @function.return_values %></td>
+		<td><%= @function.updated_at.strftime("%m月%d日 %H時%M分") %></td>
+		<td><%= @function.descriptions %></td>
+		<td><%= simple_format(@function.data) %></td>
 	</tr>
 	</tbody>
 </table>
 
-<%= link_to "編集", 'functions/edit' %>
+<%= link_to "編集", edit_function_path(@function.id) %>
+<%= link_to "削除", function_path(@function.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
